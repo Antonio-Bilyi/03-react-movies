@@ -16,11 +16,12 @@ export default function App() {
     const [isLoading, setIsLoading] = useState(false);
     const [isError, setIsError] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [selectedMovie, setSelectedMovie] = useState<Movie>();
+    const [selectedMovie, setSelectedMovie] = useState<Movie | null>();
 
     const handleSearch = async (query: string) => {
         
         try {
+            setMovies([]);
             setIsLoading(true);
             setIsError(false);
 
@@ -52,11 +53,6 @@ export default function App() {
         setIsModalOpen(false);
     }
 
-
-
-
-
-    
     return (
 
         <div className={css.app}>
